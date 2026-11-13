@@ -1,4 +1,10 @@
 <title>RGS Monopoly</title>
+<meta name="description" content="RGS Monopoly: the classic property game rebuilt around RGS Guildford. Made by Year 11 Tycoon Enterprise. Order online and collect at the Christmas fair.">
+<meta name="theme-color" content="#032619">
+<meta property="og:type" content="website">
+<meta property="og:title" content="RGS Monopoly">
+<meta property="og:description" content="The classic property game, rebuilt around RGS Guildford. Order online, collect at the Christmas fair.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23c8372d'/%3E%3Crect x='6' y='6' width='52' height='52' rx='8' fill='none' stroke='%23f3efe4' stroke-width='3'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-weight='700' font-size='24' text-anchor='middle' fill='%23f3efe4'%3ERGS%3C/text%3E%3C/svg%3E">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap">
@@ -349,6 +355,12 @@ textarea.csv { width: 100%; min-height: 140px; margin-top: 12px; background: rgb
 .help p { color: var(--ink-2); margin-top: 8px; font-size: 15px; }
 
 footer { border-top: 1px solid var(--line); margin-top: 24px; }
+footer .foot-link { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.legal-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 56px; margin-top: 8px; }
+.legal-cols h3 { font-size: 18px; font-weight: 800; margin: 22px 0 6px; color: var(--ink); }
+.legal-cols p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--ink-2, var(--ink)); max-width: 60ch; }
+.legal-cols a { color: inherit; text-underline-offset: 3px; }
+@media (max-width: 760px) { .legal-cols { grid-template-columns: minmax(0, 1fr); gap: 0; } }
 footer .wrap { padding-block: 26px calc(26px + env(safe-area-inset-bottom, 0px)); display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 12px; color: var(--ink-3); }
 
 
@@ -1000,9 +1012,44 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
           <details><summary>When and where do I collect?<span class="pm"></span></summary><p>From the Tycoon Enterprise stall at the Christmas fair on <span class="fairStr">Sun 6 Dec</span>. Give us the name on your order or your reference number.</p></details>
           <details><summary>When do orders close?<span class="pm"></span></summary><p><span class="closeStr">Fri 4 Dec, 6pm</span>. After that, any spare sets are sold at the stall on the day.</p></details>
           <details><summary>Does it play like the normal game?<span class="pm"></span></summary><p>Yes. Same rules, same money, same board layout. The squares and cards are all about RGS.</p></details><details><summary>Can you tell me the squares?<span class="pm"></span></summary><p>Nope. That's half the fun. You'll find out when you open the box.</p></details>
-          <details><summary>How many are there?<span class="pm"></span></summary><p>Not many. Once they're gone, they're gone, so reserve early.</p></details>
-          <details><summary>Can I change or cancel my order?<span class="pm"></span></summary><p>Yes. Open Order from the menu and you'll see your reservation with buttons to change or cancel it.</p></details>
-          <details><summary>Do I need to give my email?<span class="pm"></span></summary><p>No, it's optional. If you add an email or phone number, we'll only use it to tell you when your set is ready.</p></details>
+          <details><summary>How many are there?<span class="pm"></span></summary><p>Not many. Once they're gone, they're gone, so order early.</p></details>
+          <details><summary>Can I change or cancel my order?<span class="pm"></span></summary><p>Yes. Email us at <a href="mailto:rgs.monopoly@gmail.com" style="color:inherit">rgs.monopoly@gmail.com</a> with your reference before orders close and we'll change it or give you a full refund.</p></details>
+          <details><summary>Do I need to give my email?<span class="pm"></span></summary><p>Yes, so we can confirm your order and match your payment. We only use it for your order. See our <a href="#legal" data-go="legal" style="color:inherit">privacy notice</a>.</p></details>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Privacy & terms -->
+  <div class="view" data-view="legal" hidden>
+    <section class="block page-top">
+      <div class="wrap legal">
+        <div class="head"><span class="eyebrow stag"><span class="star">✦</span>The small print</span><h2 class="h2 stag">Privacy and terms</h2><p class="sub stag">Short and in plain English.</p></div>
+        <div class="legal-cols stag">
+          <div>
+            <h3>Who we are</h3>
+            <p>RGS Monopoly is made and sold by Tycoon Enterprise, a Year 11 student company at the Royal Grammar School, Guildford, run as part of the Young Enterprise Company Programme. Contact us at <a href="mailto:rgs.monopoly@gmail.com">rgs.monopoly@gmail.com</a>.</p>
+            <h3>What we collect</h3>
+            <p>When you order we ask for your name, the pupil's name and form, and your email. We use them only to sort out your order: matching your payment, emailing you, and handing over your set.</p>
+            <h3>Where it goes</h3>
+            <p>Your order is emailed to our company inbox through FormSubmit, a form service. Payments are handled by our payment provider. We never see or store your card details.</p>
+            <h3>How long we keep it</h3>
+            <p>We delete order details by 31 January 2027, once the fair is over and every order is settled. We never sell or share your details, and never add you to a mailing list.</p>
+            <h3>Your rights</h3>
+            <p>Email us any time to see, correct or delete the details we hold about you.</p>
+          </div>
+          <div>
+            <h3>Price and paying</h3>
+            <p><span class="faqPrice">£20</span> a set. Online orders are paid by card when you order. Your order is only confirmed once your payment has reached us.</p>
+            <h3>Collecting</h3>
+            <p>Collect your set from our stall at the Christmas fair, <span class="fairStr">Sun 6 Dec</span>. Bring your name or order reference. If you can't make the fair, email us and we'll arrange collection at school.</p>
+            <h3>Changes, cancellations and refunds</h3>
+            <p>Email us with your reference before orders close, <span class="closeStr">Fri 4 Dec, 6pm</span>, to change or cancel your order for a full refund. If your set is faulty or has a piece missing, tell us and we'll replace the part or refund you.</p>
+            <h3>Stock</h3>
+            <p>We've made a limited number of sets. If we sell out before your payment reaches us, we'll refund you in full.</p>
+            <h3>The game</h3>
+            <p>RGS Monopoly is a student-made edition built on donated Monopoly boards. It isn't made or endorsed by Hasbro, the makers of Monopoly.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -1012,6 +1059,7 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
 <footer>
   <div class="wrap">
     <span>Year 11 Tycoon Enterprise · RGS Guildford</span>
+    <span><a href="#legal" data-go="legal" class="foot-link">Privacy and terms</a> · <a href="mailto:rgs.monopoly@gmail.com" class="foot-link">rgs.monopoly@gmail.com</a></span>
     <span>A student-made game. Not affiliated with the makers of the original.</span>
   </div>
 </footer>
@@ -1102,7 +1150,7 @@ scrim.onclick = () => setMenu(false);
 document.addEventListener("keydown", e => { if (e.key === "Escape" && fold.classList.contains("open")) { setMenu(false); menuBtn.focus(); } });
 
 /* ---- router: #preview, #order, #faq ---- */
-const VIEWS = ["home", "preview", "order", "faq"];
+const VIEWS = ["home", "preview", "order", "faq", "legal"];
 let curView = null;
 function show(view, anchor) {
   if (!VIEWS.includes(view)) view = "home";
