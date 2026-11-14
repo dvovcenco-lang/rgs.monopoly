@@ -2,7 +2,9 @@
 
 Pre-order site for RGS Monopoly, Year 11 Tycoon Enterprise, RGS Guildford.
 
-## Turning on online ordering
-Open `index.html`, find `paymentLink: ""` near the `CONFIG` block and paste your card payment link between the quotes. Until then the order button shows "Online ordering opens soon".
+## How reservations work
+Reserving is free. Each reservation is emailed to rgs.monopoly@gmail.com with a reference (RGS-1234), marked "not paid yet". Once a set is made, email that customer how to pay.
 
-Orders are emailed to rgs.monopoly@gmail.com through FormSubmit. The very first order triggers an activation email to that inbox: click **Activate Form** once and every order after that arrives as an email.
+When you've had as many reservations as you can make, open `index.html`, find `fullyReserved: false` in the `CONFIG` block and change it to `true`. The form then shows "All sets reserved".
+
+The very first reservation triggers an activation email to rgs.monopoly@gmail.com: click **Activate Form** once and every reservation after that arrives as an email.
