@@ -1,3 +1,12 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="canonical" href="https://rgsmonopoly.com/">
+<meta property="og:url" content="https://rgsmonopoly.com/">
+<meta property="og:image" content="https://rgsmonopoly.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <title>RGS Monopoly</title>
 <meta name="description" content="RGS Monopoly: the classic property game rebuilt around RGS Guildford. Made by Year 11 Tycoon Enterprise. Order online and collect at the Christmas fair.">
 <meta name="theme-color" content="#032619">
@@ -158,7 +167,7 @@ section.block + section.block { border-top: 1px solid var(--line); }
 .float { position: absolute; transform: translateZ(60px); animation: floaty 6s ease-in-out infinite; pointer-events: none; }
 .mini-card { width: 132px; aspect-ratio: 1.5; background: var(--cream); padding: 5px; box-shadow: 0 18px 30px rgba(0,0,0,.45); }
 .mini-card div { border: 1px solid var(--deed-ink); height: 100%; display: flex; flex-direction: column; }
-.mini-card .hd { background: var(--red); color: #fff; font-size: 8px; font-weight: 800; letter-spacing: .2em; padding: 4px 6px; }
+.mini-card .hd { background: #f08a1d; color: #1d1a16; color: #fff; font-size: 8px; font-weight: 800; letter-spacing: .2em; padding: 4px 6px; }
 .mini-card .tx { color: var(--deed-ink); font-size: 10px; font-weight: 700; line-height: 1.25; padding: 6px 7px; }
 .mini-deed { width: 104px; background: var(--cream); padding: 5px; box-shadow: 0 18px 30px rgba(0,0,0,.45); }
 .mini-deed > div { border: 1px solid var(--deed-ink); }
@@ -204,21 +213,24 @@ section.block + section.block { border-top: 1px solid var(--line); }
 
 .draw { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: center; }
 .deck { position: relative; perspective: 1400px; display: grid; place-items: center; min-height: 300px; }
-.deck .under { position: absolute; width: min(100%, 400px); aspect-ratio: 1.55; background: var(--cream); box-shadow: 0 10px 20px rgba(0,0,0,.3); }
+.deck .under { position: absolute; width: min(100%, 440px); aspect-ratio: 320 / 176; background: var(--cream); box-shadow: 0 10px 20px rgba(0,0,0,.3); }
 .deck .under:nth-child(1) { transform: rotate(-6deg) translate(-10px, 8px); opacity: .5; }
 .deck .under:nth-child(2) { transform: rotate(4deg) translate(8px, 4px); opacity: .75; }
-.gcard { position: relative; width: min(100%, 400px); aspect-ratio: 1.55; transform-style: preserve-3d; transition: transform .8s var(--ease); }
+.gcard { position: relative; width: min(100%, 440px); aspect-ratio: 320 / 176; transform-style: preserve-3d; transition: transform .8s var(--ease); }
 .gcard.flipped { transform: rotateY(180deg); }
 .gcard.shuffle { animation: shuffle .45s var(--ease); }
 .gface { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; box-shadow: 0 26px 50px rgba(0,0,0,.45); }
-.gback { align-items: center; justify-content: center; background: radial-gradient(circle at 30% 20%, var(--red-hi), var(--red) 60%); color: #fff; border: 10px solid var(--cream); }
+.gback { align-items: center; justify-content: center; background: #f08a1d; }
+.gface > img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 3px; }
 .gback.chest { background: radial-gradient(circle at 30% 20%, var(--gold-hi), var(--gold) 60%); color: var(--gold-ink); }
 .gback b { font-size: 34px; font-weight: 900; font-stretch: 120%; letter-spacing: .02em; text-transform: uppercase; }
 .gback span { font-size: 11px; letter-spacing: .24em; text-transform: uppercase; margin-top: 6px; opacity: .85; }
-.gfront { transform: rotateY(180deg); background: var(--cream); color: var(--deed-ink); padding: 10px; }
+.gfront { transform: rotateY(180deg); background: var(--cream); color: var(--deed-ink); }
+.gfront .in { margin: 10px; height: calc(100% - 20px); box-sizing: border-box; }
+.gfront .in[hidden], .gface > img[hidden] { display: none; }
 .gfront .in { border: 1.5px solid var(--deed-ink); height: 100%; display: flex; flex-direction: column; }
-.gfront .hd { padding: 10px 16px; font-size: 11px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: #fff; background: var(--red); }
-.gfront .hd.chest { background: var(--gold); color: var(--gold-ink); }
+.gfront .hd { padding: 10px 16px; font-size: 11px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: #1d1a16; background: #f08a1d; }
+.gfront .hd.chest { background: #1f4fa3; color: #fff; }
 .gfront .tx { flex: 1; display: flex; align-items: center; padding: 14px 20px; font-size: clamp(17px, 2vw, 22px); font-weight: 700; line-height: 1.28; }
 .gfront .ft { padding: 0 20px 10px; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: #6b6458; }
 .drawbtns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
@@ -355,7 +367,17 @@ textarea.csv { width: 100%; min-height: 140px; margin-top: 12px; background: rgb
 .help p { color: var(--ink-2); margin-top: 8px; font-size: 15px; }
 
 footer { border-top: 1px solid var(--line); margin-top: 24px; }
-footer .foot-link { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+footer .foot-link { color: inherit; text-decoration: underline; text-underline-offset: 3px; display: inline-block; padding: 9px 0; }
+#bricksToggle { min-height: 44px; }
+.btn { -webkit-tap-highlight-color: transparent; }
+.btn:active { transform: translateY(1px) scale(.97); }
+.pcard.deedcard { transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
+.pcard.deedcard:hover { transform: translateY(-10px) rotate(-1.5deg); box-shadow: 0 36px 60px rgba(0,0,0,.5); }
+.board-big { transition: transform .6s var(--ease); }
+.board-big svg image { transition: filter .4s ease; }
+.rise { opacity: 0; transform: translateY(26px); transition: opacity .75s var(--ease), transform .75s var(--ease); }
+.rise.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .rise { opacity: 1; transform: none; transition: none; } .btn:active { transform: none; } }
 .legal-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 56px; margin-top: 8px; }
 .legal-cols h3 { font-size: 18px; font-weight: 800; margin: 22px 0 6px; color: var(--ink); }
 .legal-cols p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--ink-2, var(--ink)); max-width: 60ch; }
@@ -390,7 +412,7 @@ footer .wrap { padding-block: 26px calc(26px + env(safe-area-inset-bottom, 0px))
 
 
 /* property cards in the board's own style */
-.pcards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.pcards { display: grid; grid-template-columns: repeat(3, minmax(0, 260px)); gap: 28px; justify-content: start; }
 .pcard { background: #f3efe6; color: #141414; border: 3px solid #141414; display: flex; flex-direction: column; box-shadow: 0 20px 40px rgba(0,0,0,.35); transition: transform .4s var(--ease); }
 .pcard:hover { transform: translateY(-6px) rotate(-1deg); }
 .pband { height: 54px; border-bottom: 3px solid #141414; }
@@ -399,6 +421,9 @@ footer .wrap { padding-block: 26px calc(26px + env(safe-area-inset-bottom, 0px))
 .pphoto svg { width: 44%; height: 44%; }
 .pprice { border-top: 3px solid #141414; padding: 12px 10px 13px; text-align: center; font-size: 17px; font-weight: 900; letter-spacing: .02em; font-variant-numeric: tabular-nums; }
 .pcard.back { background: repeating-linear-gradient(45deg, #0b4a37 0 10px, #0f5a43 10px 16px); color: var(--ink); border-color: var(--gold); align-items: center; justify-content: center; gap: 4px; text-align: center; min-height: 260px; }
+.pcard.deedcard { display: block; background: none; border: 0; padding: 0; box-shadow: 0 24px 44px rgba(0,0,0,.42); border-radius: 4px; }
+.pcard.deedcard img { width: 100%; max-width: 100%; height: auto; display: block; border-radius: 4px; }
+.pcards > * { min-width: 0; }
 .pcard.back .q { font-size: 56px; font-weight: 900; color: var(--gold-hi); line-height: 1; }
 .pcard.back b { font-size: 20px; font-weight: 900; }
 .pcard.back span:last-child { font-size: 13px; color: var(--ink-2); }
@@ -772,7 +797,8 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
     <div class="bubble" id="bubble"></div>
   </div>
 </div>
-
+</head>
+<body>
 <header class="bar">
   <div class="bar-in">
     <div class="wrap">
@@ -796,7 +822,7 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
           <button class="mi" type="button" data-go="order"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18v8H3z"/><path d="M4 12V8h16v4"/><path d="M12 8v12"/><path d="M8 8a2.5 2.5 0 0 1 4-2 2.5 2.5 0 0 1 4 2"/></svg></span><span class="txt"><span class="t">Order</span><span class="d">Reserve now, pay at the stall</span></span><span class="badge" id="menuBadge" hidden></span></button>
           <button class="mi" type="button" data-go="faq"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14"/><path d="M12 17.5h.01"/></svg></span><span class="txt"><span class="t">FAQ</span><span class="d">Paying, collecting, cancelling</span></span></button>
         </div>
-        <div class="menu-foot"><span>Orders close in <b id="menuCd">—</b></span><span>Collect at the stall, <span class="fairStr">Sun 6 Dec</span></span><button class="bricks-toggle" type="button" id="bricksToggle">Hide Bricks</button></div>
+        <div class="menu-foot"><span>Orders close in <b id="menuCd">—</b></span><span>Collect at the stall, <span class="fairStr">Sat 28 Nov</span></span><button class="bricks-toggle" type="button" id="bricksToggle">Hide Bricks</button></div>
       </nav>
     </div>
   </div>
@@ -821,23 +847,23 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
           <div>
             <span class="eyebrow stag"><span class="star">✦</span>Christmas <span class="yearStr">2026</span><span class="eb-x"> · Tycoon Enterprise</span></span>
             <h1 class="stag"><span class="w">RGS</span><br><span class="foil">Monopoly</span></h1>
-            <p class="lede stag">Buy up the school, square by square. The classic property game, rebuilt around RGS. Which squares made the board? Open the box and find out.</p>
+            <p class="lede stag">Buy Big School. Build hotels on the High Street. Land in Detention for forgetting your tie. The classic property game, rebuilt square by square around RGS.</p>
             <div class="price-tag stag"><b id="priceStr">£20</b><span id="priceNote">a set · reserve now, pay later</span></div>
             <div class="cd-wrap stag">
-              <span class="eyebrow"><span class="star">✦</span><span id="cdLabel">Orders close in</span></span>
+              <span class="eyebrow"><span class="star">✦</span><span id="cdLabel">Reservations close in</span></span>
               <div class="cd" id="countdown">
                 <div class="cd-t"><span class="v" id="cdD">0</span><span class="k">days</span></div>
                 <div class="cd-t"><span class="v" id="cdH">00</span><span class="k">hrs</span></div>
                 <div class="cd-t"><span class="v" id="cdM">00</span><span class="k">min</span></div>
                 <div class="cd-t sec"><span class="v" id="cdS">00</span><span class="k">sec</span></div>
               </div>
-              <p class="closed-note" id="closedNote" hidden>Pre-orders are closed. Come and find us at the stall.</p>
+              <p class="closed-note" id="closedNote" hidden>Reservations are closed. Find us at the stall at the Christmas fair for any spare sets.</p>
             </div>
             <div class="ctas stag">
               <a class="btn btn-gold" href="#order"><span class="sheen"></span>Reserve a set</a>
               <a class="btn btn-ghost" href="#preview">Sneak peek</a>
             </div>
-            <p class="pickup stag"><span class="dot"></span>Pick up from our stall at the Christmas fair, <span class="fairStr">Sun 6 Dec</span></p>
+            <p class="pickup stag"><span class="dot"></span>Collect from the Tycoon Enterprise stall at the Christmas fair, <span class="fairStr">Sat 28 Nov</span></p>
           </div>
 
           <div class="stage stag" id="stage" aria-hidden="true">
@@ -850,16 +876,16 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
               <div class="glare"></div>
               <div class="glint"></div>
               <div class="baubles" id="baubles"></div>
-              <div class="float c" style="left:-46px;bottom:26%;animation-delay:-2s"><div class="mini-card" style="transform:rotate(-9deg)"><div><span class="hd">CHANCE</span><span class="tx">Caught without your tie. Go directly to Detention.</span></div></div></div>
+              <div class="float c" style="left:-46px;bottom:26%;animation-delay:-2s"><div class="mini-card" style="transform:rotate(-9deg)"><div><span class="hd">CHANCE</span><span class="tx">You got straight 9s! Collect £150.</span></div></div></div>
               <div class="float d" style="right:-34px;top:34%"><div class="mini-deed" style="transform:rotate(7deg)"><div><div class="hd"><small>TITLE DEED</small><b>? ? ?</b></div><div class="rows"><p><span>Rent</span><span>£??</span></p><p><span>Hotel</span><span>£???</span></p></div></div></div></div>
             </div>
           </div>
         </div>
 
         <div class="explore-row stag">
-          <button class="xl" type="button" data-go="preview"><span class="sw" style="background:var(--gold)"></span><span><b>Sneak peek</b><span>A few clues, no spoilers</span></span><span class="arr">→</span></button>
+          <button class="xl" type="button" data-go="preview"><span class="sw" style="background:var(--gold)"></span><span><b>Sneak peek</b><span>Two squares unwrapped, the rest under wraps</span></span><span class="arr">→</span></button>
           <button class="xl" type="button" data-go="order"><span class="sw" style="background:#2f8a55"></span><span><b>Reserve a set</b><span>Nothing to pay today</span></span><span class="arr">→</span></button>
-          <button class="xl" type="button" data-go="faq"><span class="sw" style="background:var(--red)"></span><span><b>Questions</b><span>Paying and collecting</span></span><span class="arr">→</span></button>
+          <button class="xl" type="button" data-go="faq"><span class="sw" style="background:var(--red)"></span><span><b>Questions</b><span>Paying, collecting, the small print</span></span><span class="arr">→</span></button>
         </div>
       </div>
     </section>
@@ -869,10 +895,10 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
   <div class="view" data-view="preview" hidden>
     <section class="block page-top">
       <div class="wrap">
-        <div class="head"><span class="eyebrow stag"><span class="star">✦</span>Sneak peek</span><h2 class="h2 stag">No spoilers. Well, a few.</h2><p class="sub stag">Every square on the board is somewhere at RGS. We've unwrapped three. The rest you'll find when you open the box.</p></div>
+        <div class="head"><span class="eyebrow stag"><span class="star">✦</span>Sneak peek</span><h2 class="h2 stag">No spoilers. Well, two.</h2><p class="sub stag">This is the real board, still in its wrapping paper. Every square is somewhere you know, from the High Street to the Sports Hall corridor. We've unwrapped two. Tap any square for a clue.</p></div>
         <div class="explore stag">
           <div>
-            <div class="board-big"><svg id="bigBoard" viewBox="0 0 440 440" role="group" aria-label="RGS Monopoly board with the squares kept secret. Each square is a button."></svg></div>
+            <div class="board-big"><svg id="bigBoard" viewBox="0 0 440 440" role="group" aria-label="The RGS Monopoly board with most squares gift-wrapped. Each square is a button."></svg></div>
           </div>
           <div class="info" id="info" aria-live="polite"></div>
         </div>
@@ -884,7 +910,7 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
         <div>
           <span class="eyebrow"><span class="star">✦</span>Chance &amp; Community Chest</span>
           <h2 class="h2" style="margin-top:12px">Draw a card</h2>
-          <p class="sub" style="margin-top:12px">Every card is rewritten about school life. We'll show you a couple. The rest stay in the box.</p>
+          <p class="sub" style="margin-top:12px">All 32 cards are rewritten about life at RGS: forgotten ties, straight 9s, snapped studs. Draw one from each pile. The rest stay in the box.</p>
           <div class="drawbtns">
             <button class="btn btn-gold" type="button" id="drawChance">Draw Chance</button>
             <button class="btn btn-ghost" type="button" id="drawChest">Draw Community Chest</button>
@@ -893,8 +919,8 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
         <div class="deck">
           <div class="under"></div><div class="under"></div>
           <div class="gcard" id="gcard">
-            <div class="gface gback" id="gback"><b>Chance</b><span>Tap a button to draw</span></div>
-            <div class="gface gfront"><div class="in"><div class="hd" id="ghd">Chance</div><div class="tx" id="gtx"></div><div class="ft">RGS Monopoly</div></div></div>
+            <div class="gface gback" id="gback"><img id="gbackImg" src="img/chance-back.png" alt="Chance card, face down" width="320" height="176"></div>
+            <div class="gface gfront"><img id="gimg" src="img/chance-1.png" alt="" width="320" height="176"><div class="in" id="gend" hidden><div class="hd" id="ghd">Chance</div><div class="tx" id="gtx"></div><div class="ft">RGS Monopoly</div></div></div>
           </div>
         </div>
       </div>
@@ -902,7 +928,7 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
 
     <section class="block">
       <div class="wrap">
-        <div class="head"><span class="eyebrow"><span class="star">✦</span>Unwrapped</span><h2 class="h2">Three squares you can see now</h2><p class="sub">Same rules, same money, our school. Tap a card to take a closer look. The rest stay in the box.</p></div>
+        <div class="head"><span class="eyebrow"><span class="star">✦</span>Unwrapped</span><h2 class="h2">Two title deeds, unwrapped</h2><p class="sub">Same rules, same money, our school. Every property has a photo of the real place on its deed. Tap one for a closer look.</p></div>
         <div class="pcards" id="pcards"></div>
       </div>
     </section>
@@ -918,15 +944,15 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
             <div class="facts stag">
               <div class="fact"><span>One set</span><span id="fPrice">£20</span></div>
               <div class="fact"><span>Three sets</span><span id="fBundle">£60</span></div>
-              <div class="fact"><span>Reservations close</span><span class="closeStr">Fri 4 Dec, 6pm</span></div>
-              <div class="fact"><span>Collect</span><span>Our stall, <span class="fairStr">Sun 6 Dec</span></span></div>
+              <div class="fact"><span>Reservations close</span><span class="closeStr">Mon 23 Nov, 6pm</span></div>
+              <div class="fact"><span>Collect</span><span>Our stall, <span class="fairStr">Sat 28 Nov</span></span></div>
             </div>
           </div>
 
           <div class="panel stag" id="panel">
             <form id="orderForm" novalidate>
               <div class="panel-head">
-                <span class="eyebrow"><span class="star">✦</span>Your order</span>
+                <span class="eyebrow"><span class="star">✦</span>Your reservation</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d9b56c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M3 12h18v8H3z"/><path d="M12 6v14"/><path d="M8 6a2.5 2.5 0 0 1 4-2 2.5 2.5 0 0 1 4 2"/></svg>
               </div>
               <div class="qty-row">
@@ -939,13 +965,13 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
               <div class="fields">
                 <div class="field"><label for="fName">Your name</label><input id="fName" autocomplete="name" maxlength="80" placeholder="Helen Marsh"></div>
                 <div class="field"><label for="fPupil">Pupil and form</label><input id="fPupil" maxlength="80" placeholder="Toby Marsh, 8H"></div>
-                <div class="field"><label for="fContact">Your email</label><input id="fContact" type="email" maxlength="120" autocomplete="email" inputmode="email" placeholder="For your order confirmation"></div>
+                <div class="field"><label for="fContact">Your email</label><input id="fContact" type="email" maxlength="120" autocomplete="email" inputmode="email" placeholder="So we can tell you when it's ready"></div>
               </div>
               <div class="candy" aria-hidden="true"></div>
               <div class="total-row"><div><div class="total-lbl">Total, paid later</div><div class="total" id="total">£20</div></div></div>
               <button class="btn btn-gold" type="submit" id="reserveBtn"><span class="sheen"></span><span id="reserveTxt">Reserve 1 set</span></button>
               <p class="err" id="err" hidden></p>
-              <p class="small-note" id="payNote">Nothing to pay today. Collect from our stall, <span class="fairStr">Sun 6 Dec</span></p>
+              <p class="small-note" id="payNote">Nothing to pay today. Collect from our stall, <span class="fairStr">Sat 28 Nov</span></p>
             </form>
 
             <div class="done" id="done" hidden>
@@ -956,7 +982,7 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
               <div class="done-rows">
                 <div><span>Total, paid later</span><span id="dPay"></span></div>
                 <div><span>Reference</span><span class="refwrap"><span id="dRef"></span><button class="copyref" type="button" id="copyRef" aria-label="Copy reference"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span id="copyRefTxt">Copy</span></button></span></div>
-                <div><span>Collect</span><span>Our stall, <span class="fairStr">Sun 6 Dec</span></span></div>
+                <div><span>Collect</span><span>Our stall, <span class="fairStr">Sat 28 Nov</span></span></div>
               </div>
               <p class="done-tip" id="doneTip"></p>
               <a class="btn btn-ghost" href="https://www.instagram.com/rgs.monopoly/" target="_blank" rel="noopener" style="margin-bottom:10px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:5px"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Follow @rgs.monopoly</a>
@@ -1003,17 +1029,17 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
     <section class="block page-top">
       <div class="wrap faq-grid">
         <div>
-          <div class="head"><span class="eyebrow stag"><span class="star">✦</span>FAQ</span><h2 class="h2 stag">Questions people ask us</h2><p class="sub stag">Everything about paying, collecting and the game itself.</p></div>
-          <div class="help stag"><h3>Rather order in person?</h3><p>Come to our stall at the Christmas fair and pay cash, while sets last. Or email us at <a href="mailto:rgs.monopoly@gmail.com" style="color:inherit">rgs.monopoly@gmail.com</a>, or message us on Instagram at <a href="https://www.instagram.com/rgs.monopoly/" target="_blank" rel="noopener" style="color:inherit">@rgs.monopoly</a>.</p></div>
+          <div class="head"><span class="eyebrow stag"><span class="star">✦</span>FAQ</span><h2 class="h2 stag">Questions people ask us</h2><p class="sub stag">Paying, collecting, and what's inside the box.</p></div>
+          <div class="help stag"><h3>Rather buy in person?</h3><p>Come to our stall at the Christmas fair and pay cash, while sets last. Or email us at <a href="mailto:rgs.monopoly@gmail.com" style="color:inherit">rgs.monopoly@gmail.com</a>, or message us on Instagram at <a href="https://www.instagram.com/rgs.monopoly/" target="_blank" rel="noopener" style="color:inherit">@rgs.monopoly</a>.</p></div>
         </div>
         <div class="faq stag">
           <details open><summary>How much is it?<span class="pm"></span></summary><p><span class="faqPrice">£20</span> a set.</p></details>
           <details><summary>How do I pay?<span class="pm"></span></summary><p>Nothing to pay when you reserve. Once your set is made, we'll email you how to pay. You can also pay when you collect at our stall.</p></details>
-          <details><summary>When and where do I collect?<span class="pm"></span></summary><p>From the Tycoon Enterprise stall at the Christmas fair on <span class="fairStr">Sun 6 Dec</span>. Give us the name on your order or your reference number.</p></details>
-          <details><summary>When do reservations close?<span class="pm"></span></summary><p><span class="closeStr">Fri 4 Dec, 6pm</span>. After that, any spare sets are sold at the stall on the day.</p></details>
-          <details><summary>Does it play like the normal game?<span class="pm"></span></summary><p>Yes. Same rules, same money, same board layout. The squares and cards are all about RGS.</p></details><details><summary>Can you tell me the squares?<span class="pm"></span></summary><p>Nope. That's half the fun. You'll find out when you open the box.</p></details>
+          <details><summary>When and where do I collect?<span class="pm"></span></summary><p>From the Tycoon Enterprise stall at the Christmas fair on <span class="fairStr">Sat 28 Nov</span>. Give us the name on your order or your reference number.</p></details>
+          <details><summary>When do reservations close?<span class="pm"></span></summary><p><span class="closeStr">Mon 23 Nov, 6pm</span>. After that, any spare sets are sold at the stall on the day.</p></details>
+          <details><summary>Does it play like the normal game?<span class="pm"></span></summary><p>Yes. Same rules, same money, same layout. Every property is a real place at RGS or nearby, with a photo on its title deed, and all 32 Chance and Community Chest cards are rewritten about school life.</p></details><details><summary>Can you tell me the squares?<span class="pm"></span></summary><p>Nope. That's half the fun. You'll find out when you open the box.</p></details>
           <details><summary>How many are there?<span class="pm"></span></summary><p>Not many. Reservations are first come, first served, so reserve early.</p></details>
-          <details><summary>Can I change or cancel my order?<span class="pm"></span></summary><p>Yes. Email us at <a href="mailto:rgs.monopoly@gmail.com" style="color:inherit">rgs.monopoly@gmail.com</a> with your reference and we'll change or cancel it. You haven't paid anything yet, so there's nothing to refund.</p></details>
+          <details><summary>Can I change or cancel my reservation?<span class="pm"></span></summary><p>Yes. Email us at <a href="mailto:rgs.monopoly@gmail.com" style="color:inherit">rgs.monopoly@gmail.com</a> with your reference and we'll change or cancel it. You haven't paid anything yet, so there's nothing to refund.</p></details>
           <details><summary>Do I need to give my email?<span class="pm"></span></summary><p>Yes, so we can tell you when your set is ready and how to pay. We only use it for your order. See our <a href="#legal" data-go="legal" style="color:inherit">privacy notice</a>.</p></details>
         </div>
       </div>
@@ -1042,7 +1068,7 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
             <h3>Price and paying</h3>
             <p><span class="faqPrice">£20</span> a set. Reserving is free. Once your set is made, we'll email you how to pay. Your set is yours once you've paid, online or at the stall.</p>
             <h3>Collecting</h3>
-            <p>Collect your set from our stall at the Christmas fair, <span class="fairStr">Sun 6 Dec</span>. Bring your name or order reference. If you can't make the fair, email us and we'll arrange collection at school.</p>
+            <p>Collect your set from our stall at the Christmas fair, <span class="fairStr">Sat 28 Nov</span>. Bring your name or order reference. If you can't make the fair, email us and we'll arrange collection at school.</p>
             <h3>Changes, cancellations and refunds</h3>
             <p>Email us with your reference to change or cancel a reservation at any time before you pay. If your set is faulty or has a piece missing, tell us and we'll replace the part or refund you.</p>
             <h3>Stock</h3>
@@ -1069,8 +1095,8 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
 const CONFIG = {
   unitPrice: 20,
   bundlePrice: 60,                       // price for 3 sets (60 = no discount)
-  closeDate: "2026-12-04T18:00:00Z",
-  fairDate: "2026-12-06T10:00:00Z",
+  closeDate: "2026-11-23T18:00:00Z",
+  fairDate: "2026-11-28T10:00:00Z",
   maxSets: 20,
   orderEmail: "rgs.monopoly@gmail.com",
   instagram: "https://www.instagram.com/rgs.monopoly/",
@@ -1143,9 +1169,11 @@ tick(); setInterval(tick, 1000);
 const fold = $("fold"), menuBtn = $("menuBtn"), scrim = $("scrim");
 function setMenu(open) {
   fold.classList.toggle("open", open); scrim.classList.toggle("on", open); document.body.classList.toggle("menu-on", open);
+  fold.inert = !open;
   menuBtn.setAttribute("aria-expanded", String(open));
   if (open) setTimeout(() => fold.querySelector('.mi[aria-current="page"]')?.focus({ preventScroll: true }), 250);
 }
+fold.inert = true;
 menuBtn.onclick = () => setMenu(menuBtn.getAttribute("aria-expanded") !== "true");
 scrim.onclick = () => setMenu(false);
 document.addEventListener("keydown", e => { if (e.key === "Escape" && fold.classList.contains("open")) { setMenu(false); menuBtn.focus(); } });
@@ -1166,7 +1194,7 @@ function show(view, anchor) {
     curView = view;
   };
   setMenu(false);
-  if (document.startViewTransition && curView && view !== curView && !reduce) document.startViewTransition(swap); else swap();
+  if (document.startViewTransition && curView && view !== curView && !reduce) { const t = document.startViewTransition(swap); t.ready.catch(() => {}); t.finished.catch(() => {}); t.updateCallbackDone?.catch(() => {}); } else swap();
 }
 function go(view, anchor) {
   const h = view === "home" ? "" : "#" + view;
@@ -1199,29 +1227,7 @@ function geom(i, S, C, W, B) {
 const NS = "http://www.w3.org/2000/svg";
 function mk(parent, t, a, txt) { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; parent.appendChild(e); return e; }
 (function () {
-  const svg = $("boardSvg"), S = 440, C = 62, W = (S - 2 * C) / 9, B = 12;
-  mk(svg, "rect", { x: 0, y: 0, width: S, height: S, fill: "#f7f1e3" });
-  const defs = mk(svg, "defs", {});
-  const rg = mk(defs, "radialGradient", { id: "mid", cx: "50%", cy: "40%", r: "70%" });
-  mk(rg, "stop", { offset: "0", "stop-color": "#0b5a42" }); mk(rg, "stop", { offset: "1", "stop-color": "#032619" });
-  mk(svg, "rect", { x: C, y: C, width: S - 2 * C, height: S - 2 * C, fill: "url(#mid)" });
-  for (let i = 0; i < 40; i++) {
-    const g = geom(i, S, C, W, B);
-    if (g.k !== 0 && GOF[i]) mk(svg, "rect", { x: g.bx, y: g.by, width: g.bw, height: g.bh, fill: GROUP[GOF[i]][0] });
-    if (g.k === 5) mk(svg, "circle", { cx: g.x + g.w / 2, cy: g.y + g.h / 2, r: 6, fill: "#1a1813" });
-  }
-  let d = ""; for (let k = 0; k <= 9; k++) { const p = C + k * W; d += `M${p} 0V${C}M${p} ${S - C}V${S}M0 ${p}H${C}M${S - C} ${p}H${S}`; }
-  mk(svg, "path", { d, fill: "none", stroke: "#1a1813", "stroke-width": 1.3 });
-  mk(svg, "rect", { x: C, y: C, width: S - 2 * C, height: S - 2 * C, fill: "none", stroke: "#d9b56c", "stroke-width": 2.5 });
-  mk(svg, "rect", { x: C + 20, y: C + 20, width: S - 2 * C - 40, height: S - 2 * C - 40, fill: "none", stroke: "rgba(217,181,108,.35)", "stroke-width": 1 });
-  mk(svg, "rect", { x: 1.5, y: 1.5, width: S - 3, height: S - 3, fill: "none", stroke: "#1a1813", "stroke-width": 3 });
-  mk(svg, "text", { x: S / 2, y: S / 2 - 30, "text-anchor": "middle", "font-family": "Archivo,sans-serif", "font-size": 11, "font-weight": 700, "letter-spacing": 4, fill: "#d9b56c" }, "✦ CHRISTMAS " + fair.getFullYear() + " ✦");
-  mk(svg, "text", { x: S / 2, y: S / 2 + 18, "text-anchor": "middle", "font-family": "Archivo,sans-serif", "font-size": 34, "font-weight": 900, "font-stretch": "100%", "letter-spacing": -1, fill: "#fbf7ee" }, "RGS Monopoly");
-  mk(svg, "text", { x: S / 2, y: S / 2 + 46, "text-anchor": "middle", "font-family": "Archivo,sans-serif", "font-size": 10, "font-weight": 600, "letter-spacing": 3, fill: "rgba(251,247,238,.6)" }, "BUY UP THE SCHOOL");
-  [["GO", 0], ["DETENTION", 10], ["FREE PERIOD", 20], ["GO TO DETENTION", 30]].forEach(([t, i]) => {
-    const g = geom(i, S, C, W, B), words = t.split(" ");
-    words.forEach((w, j) => mk(svg, "text", { x: g.x + C / 2, y: g.y + C / 2 + 4 - (words.length - 1) * 5.5 + j * 11, "text-anchor": "middle", "font-family": "Archivo,sans-serif", "font-size": i === 0 ? 16 : (w.length > 7 ? 7.5 : 9), "font-weight": 900, fill: i === 0 ? "#e2404f" : "#1a1813" }, w));
-  });
+  mk($("boardSvg"), "image", { href: "img/board-peek-sm.jpg", x: 0, y: 0, width: 440, height: 440, preserveAspectRatio: "none" });
 })();
 
 /* 3D baubles hanging over the board */
@@ -1258,45 +1264,38 @@ $("baubles").innerHTML = [{ x: 6, d: 26, c: "#e2404f", r: 44 }, { x: 27, d: 8, c
 
 /* ---- sneak-peek board: squares stay secret ---- */
 const CORNERS = {
-  0: { kind: "Corner", name: "Go", text: "Where every game starts. Collect £200 each time you pass." },
-  10: { kind: "Corner", name: "Detention / Just Visiting", text: "Just visiting, or stuck in detention until you roll a double." },
-  20: { kind: "Corner", name: "Free Period", text: "Nothing happens here, so enjoy it while it lasts." },
-  30: { kind: "Corner", name: "Go to Detention", text: "Go directly to Detention. Do not pass Go, do not collect £200." }
+  0: { kind: "Corner", name: "GO", text: "Every lap of the school starts here. Collect £200 each time you pass." },
+  10: { kind: "Corner", name: "Detention / Just Visiting", text: "Just visiting? Wave and walk on. Sent here? Sit tight until you roll a double." },
+  20: { kind: "Corner", name: "Free Period", text: "Nothing happens here. Enjoy it, it never lasts." },
+  30: { kind: "Corner", name: "Go to Detention", text: "Straight to Detention. Do not pass GO, do not collect £200." }
 };
 const TEASE = [
-  "Nice try. That one's staying wrapped until Christmas.",
-  "Every square is a real place at RGS. This one included.",
-  "You'll have to open the box to find out.",
+  "Still wrapped. You'll unwrap it on Christmas Day.",
   "Somewhere you walk past every day. That's all we're saying.",
-  "Top secret. Even some teachers don't know this one."
+  "Every square is a real place at RGS. This one included.",
+  "Big School knows. We're not telling.",
+  "Ask a Year 11. They'll say they can't say.",
+  "Nice try. That one stays under the paper."
 ];
 const REVEALED = {
-  37: { name: "The Chained Library", price: 400, set: "dblue", icon: "book" },
-  34: { name: "Sports Hall", price: 300, set: "green", icon: "ball" },
-  23: { name: "Great Hall", price: 230, set: "red", icon: "hall" }
-};
-const ICONS = {
-  book: '<path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2V5z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/><path d="M14 3v7l-2-1.5L10 10V3"/>',
-  ball: '<circle cx="12" cy="12" r="9"/><path d="M12 8l3.5 2.5-1.3 4h-4.4l-1.3-4L12 8z"/><path d="M12 3v5M20.5 9.5l-5 1M17 19l-2.8-4.5M7 19l2.8-4.5M3.5 9.5l5 1"/>',
-  hall: '<path d="M3 9l9-6 9 6"/><path d="M4 9h16M5 9v9M9 9v9M15 9v9M19 9v9M3 21h18M4 18h16"/>'
+  23: { name: "Great Hall", price: 230, set: "red", img: "img/deed-great-hall.png" },
+  9: { name: "Harvesters", price: 100, set: "lblue", img: "img/deed-harvesters.png" }
 };
 function pcardHTML(r) {
-  const c = GROUP[r.set][0];
-  return `<div class="pcard"><div class="pband" style="background:${c}"></div><div class="pname">${r.name}</div>` +
-    `<div class="pphoto" style="--tint:${c}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[r.icon]}</svg></div>` +
-    `<div class="pprice">PRICE £${r.price}</div></div>`;
+  return `<div class="pcard deedcard"><img src="${r.img}" alt="${r.name} title deed, price £${r.price}" width="198" height="318" loading="lazy" decoding="async"></div>`;
 }
 let teaseN = 0, pulseEl = null;
 function squareInfo(i) {
   if (CORNERS[i]) return CORNERS[i];
   const g = GOF[i];
-  if (REVEALED[i]) { const r = REVEALED[i]; return { kind: GROUP[r.set][1] + " set · Revealed", name: r.name, text: "One of three squares we're letting you see. Price £" + r.price + ".", band: GROUP[r.set][0], revealed: r }; }
-  if (i === 4) return { kind: "Tax", name: "Income Tax", text: "Pay £200. Sorry." };
+  if (REVEALED[i]) { const r = REVEALED[i]; return { kind: GROUP[r.set][1] + " set · Unwrapped", name: r.name, text: (i === 23 ? "Assemblies, exams, concerts. Now it's yours for £230." : "The shop everyone stops at on the way in. Yours for £100."), band: GROUP[r.set][0], revealed: r }; }
+  if (i === 4) return { kind: "Tax", name: "Income Tax", text: "Pay £200. Even the Bursar feels bad about this one." };
   if (i === 38) return { kind: "Tax", name: "Super Tax", text: "Pay £100. Still sorry." };
-  if (i % 10 === 5) return { kind: "House", name: "Secret square", text: "One of four. Own them all and the rent stacks up.", secret: true };
-  if ([2, 17, 33].includes(i)) return { kind: "Card square", name: "Community Chest", text: "Take a card from our rewritten Community Chest pile.", card: "chest" };
-  if ([7, 22, 36].includes(i)) return { kind: "Card square", name: "Chance", text: "Take a card from our rewritten Chance pile.", card: "chance" };
-  return { kind: g ? GROUP[g][1] + " set" : "Mystery square", name: "Secret square", secret: true, band: g ? GROUP[g][0] : null };
+  if (i % 10 === 5) return { kind: "Station", name: "Wrapped station", text: "One of four ways in and out of Guildford. Own them all and the rent stacks up.", secret: true };
+  if ([12, 28].includes(i)) return { kind: "Utility", name: "Wrapped utility", text: "Somewhere you go when you really need to. That's your clue.", secret: true };
+  if ([2, 17, 33].includes(i)) return { kind: "Card square", name: "Community Chest", text: "Take a card. Birthdays, bake sales and lost blazers.", card: "chest" };
+  if ([7, 22, 36].includes(i)) return { kind: "Card square", name: "Chance", text: "Take a card. Fixtures, fines and the odd fire alarm.", card: "chance" };
+  return { kind: g ? GROUP[g][1] + " set" : "Wrapped square", name: "Wrapped square", secret: true, band: g ? GROUP[g][0] : null };
 }
 function renderInfo(i, fromTap) {
   const s = squareInfo(i), box = $("info");
@@ -1304,7 +1303,7 @@ function renderInfo(i, fromTap) {
   box.innerHTML = `<div class="kind"></div><h3></h3>${s.band ? `<div class="band" style="background:${s.band}"></div>` : ""}<p></p>` +
     (s.card ? `<button class="btn btn-ghost btn-sm" type="button" style="margin-top:18px" id="infoDraw">Draw a ${s.card === "chest" ? "Community Chest" : "Chance"} card</button>` : "") +
     (s.revealed ? `<div class="info-card">${pcardHTML(s.revealed)}</div>` : "") +
-    (s.secret ? `<p class="hint">✦ Revealed when you open the box</p>` : "");
+    (s.secret ? `<p class="hint">✦ Unwrapped when you open the box</p>` : "");
   box.querySelector(".kind").textContent = s.kind; box.querySelector("h3").textContent = s.name; box.querySelector("p").textContent = text;
   box.classList.remove("fresh"); void box.offsetWidth; box.classList.add("fresh");
   if (s.card) $("infoDraw").onclick = () => { $("draw").scrollIntoView({ behavior: reduce ? "auto" : "smooth" }); setTimeout(() => drawCard(s.card), 350); };
@@ -1318,39 +1317,18 @@ function renderInfo(i, fromTap) {
   if (base) pulseEl = mk($("bigBoard"), "rect", { class: "pulse", x: base.getAttribute("x"), y: base.getAttribute("y"), width: base.getAttribute("width"), height: base.getAttribute("height") });
 }
 (function () {
-  const svg = $("bigBoard"), S = 440, C = 62, W = (S - 2 * C) / 9, B = 12;
-  const defs = mk(svg, "defs", {});
-  const pat = mk(defs, "pattern", { id: "wrap", width: 8, height: 8, patternUnits: "userSpaceOnUse", patternTransform: "rotate(45)" });
-  mk(pat, "rect", { width: 8, height: 8, fill: "#0b4a37" }); mk(pat, "rect", { width: 3, height: 8, fill: "#0f5a43" });
-  const rg = mk(defs, "radialGradient", { id: "mid2", cx: "50%", cy: "40%", r: "70%" });
-  mk(rg, "stop", { offset: "0", "stop-color": "#0b5a42" }); mk(rg, "stop", { offset: "1", "stop-color": "#032619" });
-  mk(svg, "rect", { x: 0, y: 0, width: S, height: S, fill: "#f7f1e3" });
-  mk(svg, "rect", { x: C, y: C, width: S - 2 * C, height: S - 2 * C, fill: "url(#mid2)", stroke: "#d9b56c", "stroke-width": 2.5 });
-  mk(svg, "text", { x: S / 2, y: S / 2 - 30, "text-anchor": "middle", "font-family": "Archivo,sans-serif", "font-size": 11, "font-weight": 700, "letter-spacing": 4, fill: "#d9b56c" }, "✦ NO SPOILERS ✦");
-  mk(svg, "text", { x: S / 2, y: S / 2 + 18, "text-anchor": "middle", "font-family": "Archivo,sans-serif", "font-size": 34, "font-weight": 900, "font-stretch": "100%", "letter-spacing": -1, fill: "#fbf7ee" }, "RGS Monopoly");
-  mk(svg, "text", { x: S / 2, y: S / 2 + 46, "text-anchor": "middle", "font-family": "Archivo,sans-serif", "font-size": 10, "font-weight": 600, "letter-spacing": 3, fill: "rgba(251,247,238,.6)" }, "TAP A SQUARE");
+  const svg = $("bigBoard"), S = 440, C = S * 280 / 2016, W = (S - 2 * C) / 9, B = 12;
+  mk(svg, "image", { href: "img/board-peek.jpg", x: 0, y: 0, width: S, height: S, preserveAspectRatio: "none" });
   for (let i = 0; i < 40; i++) {
     const g = geom(i, S, C, W, B), info = squareInfo(i);
-    const grp = mk(svg, "g", { class: "sq" + (info.secret ? " secret" : ""), tabindex: 0, role: "button", "data-i": i, "aria-label": info.secret ? "Secret square" : info.name });
-    mk(grp, "rect", { class: "base", x: g.x, y: g.y, width: g.w, height: g.h, fill: info.secret ? "url(#wrap)" : "#f7f1e3", stroke: "#1a1813", "stroke-width": 1.2 });
-    if (g.k !== 0 && GOF[i]) mk(grp, "rect", { x: g.bx, y: g.by, width: g.bw, height: g.bh, fill: GROUP[GOF[i]][0], "pointer-events": "none" });
-    const cx = g.x + g.w / 2, cy = g.y + g.h / 2;
-    const off = { x: g.side === 1 ? -5 : g.side === 3 ? 5 : 0, y: g.side === 0 ? 6 : g.side === 2 ? -4 : 4 };
-    if (info.revealed) { mk(grp, "circle", { class: "revring", cx: cx + off.x, cy: cy + off.y - 4, r: 8.5, fill: "none", stroke: GROUP[info.revealed.set][0], "stroke-width": 2, "pointer-events": "none" }); mk(grp, "circle", { cx: cx + off.x, cy: cy + off.y - 4, r: 8.5, fill: GROUP[info.revealed.set][0], "pointer-events": "none" }); mk(grp, "text", { x: cx + off.x, y: cy + off.y, "text-anchor": "middle", "font-size": 11, "font-weight": 900, fill: "#fff", "font-family": "Archivo,sans-serif", "pointer-events": "none" }, "★"); }
-    if ([4, 38].includes(i)) mk(grp, "text", { x: cx + off.x, y: cy + off.y + 1, "text-anchor": "middle", "font-size": 13, "font-weight": 900, fill: "#1a1813", "font-family": "Archivo,sans-serif", "pointer-events": "none" }, "£");
-    if (info.secret) mk(grp, "text", { x: cx + off.x, y: cy + off.y + 1, "text-anchor": "middle", "font-size": 14, "font-weight": 900, fill: "#d9b56c", "font-family": "Archivo,sans-serif", "pointer-events": "none" }, "?");
-    if (info.card) mk(grp, "text", { x: cx, y: cy + 5, "text-anchor": "middle", "font-size": 15, "font-weight": 900, fill: info.card === "chest" ? "#a37b38" : "#e2404f", "font-family": "Archivo,sans-serif", "pointer-events": "none" }, info.card === "chest" ? "✦" : "?");
-    if (g.k === 0) {
-      const words = { 0: ["GO"], 1: ["DETENTION"], 2: ["FREE", "PERIOD"], 3: ["GO TO", "DETENTION"] }[g.side];
-      words.forEach((w, j) => mk(grp, "text", { x: cx, y: cy + 4 - (words.length - 1) * 5.5 + j * 11, "text-anchor": "middle", "font-size": g.side === 0 ? 16 : (w.length > 7 ? 7.5 : 9), "font-weight": 900, fill: g.side === 0 ? "#e2404f" : "#1a1813", "font-family": "Archivo,sans-serif", "pointer-events": "none" }, w));
-    }
+    const grp = mk(svg, "g", { class: "sq" + (info.secret ? " secret" : ""), tabindex: 0, role: "button", "data-i": i, "aria-label": info.secret ? "Wrapped square" : info.name });
+    mk(grp, "rect", { class: "base", x: g.x, y: g.y, width: g.w, height: g.h, fill: "transparent" });
     grp.addEventListener("click", () => renderInfo(i, true));
     grp.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); renderInfo(i, true); } });
   }
-  mk(svg, "rect", { x: 1.5, y: 1.5, width: S - 3, height: S - 3, fill: "none", stroke: "#1a1813", "stroke-width": 3, "pointer-events": "none" });
-  renderInfo(37);
+  renderInfo(23);
 })();
-$("pcards").innerHTML = Object.values(REVEALED).map(pcardHTML).join("") + `<div class="pcard back"><span class="q">?</span><b>25 more</b><span>in the box</span></div>`;
+$("pcards").innerHTML = Object.values(REVEALED).map(pcardHTML).join("") + `<div class="pcard back"><span class="q">?</span><b>26 more</b><span>still wrapped</span></div>`;
 $$("#pcards .pcard:not(.back)").forEach((el, k) => {
   const r = Object.values(REVEALED)[k];
   el.tabIndex = 0; el.setAttribute("role", "button"); el.setAttribute("aria-label", "Reveal " + r.name);
@@ -1408,24 +1386,40 @@ document.addEventListener("keydown", e => { if (rvOpen && (e.key === "Escape" ||
 
 /* ---- card draw: a couple of teasers, then the box keeps the rest ---- */
 const CARDS = {
-  chance: ["Caught without your tie. Go directly to Detention. Do not pass Go.", "Fire drill in the middle of a test. Advance to Free Period."],
-  chest: ["Your house wins the house cup. Collect £50 from every player."]
+  chance: [["img/chance-1.png", "Chance: You got straight 9s! Collect £150."], ["img/chance-2.png", "Chance: You didn't hand your homework in on time. Pay a £15 fine."]],
+  chest: [["img/chest-1.png", "Community Chest: The Christmas fair bake sale sold out. Collect £100."], ["img/chest-2.png", "Community Chest: Your studs snapped before the big match. Pay £100 for new rugby boots."]]
 };
 const seen = { chance: 0, chest: 0 };
+[...CARDS.chance, ...CARDS.chest].forEach(([src]) => { const im = new Image(); im.src = src; });
 function drawCard(kind) {
-  const card = $("gcard"), list = CARDS[kind];
-  const text = seen[kind] < list.length ? list[seen[kind]] : "That's all you're getting. The rest of the pile is in the box.";
+  const card = $("gcard"), list = CARDS[kind], next = list[seen[kind]];
   seen[kind]++;
   const reveal = () => {
-    $("gback").className = "gface gback" + (kind === "chest" ? " chest" : "");
-    $("gback").querySelector("b").textContent = kind === "chest" ? "Chest" : "Chance";
-    $("ghd").className = "hd" + (kind === "chest" ? " chest" : ""); $("ghd").textContent = kind === "chest" ? "Community Chest" : "Chance";
-    $("gtx").textContent = text;
+    $("gbackImg").src = kind === "chest" ? "img/chest-back.png" : "img/chance-back.png";
+    $("gbackImg").alt = (kind === "chest" ? "Community Chest" : "Chance") + " card, face down";
+    if (next) {
+      $("gimg").hidden = false; $("gend").hidden = true; $("gimg").src = next[0]; $("gimg").alt = next[1];
+    } else {
+      $("gimg").hidden = true; $("gend").hidden = false;
+      $("ghd").className = "hd" + (kind === "chest" ? " chest" : ""); $("ghd").textContent = kind === "chest" ? "Community Chest" : "Chance";
+      $("gtx").textContent = "That's your lot. The other " + (kind === "chest" ? "14" : "14") + " are in the box.";
+    }
     card.classList.remove("shuffle"); void card.offsetWidth; card.classList.add("shuffle");
     setTimeout(() => card.classList.add("flipped"), reduce ? 0 : 260);
+    if (!next) window.Buddy?.noSpoilers("Nope. Buy the box.");
   };
   if (card.classList.contains("flipped")) { card.classList.remove("flipped"); setTimeout(reveal, reduce ? 0 : 420); } else reveal();
 }
+/* ---- scroll reveal: sections rise in as they scroll into view ---- */
+(function () {
+  if (reduce || !("IntersectionObserver" in window)) return;
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px", threshold: .08 });
+  const groups = ["#draw .draw > div", "#draw .deck", ".pcards > *", ".faq details", ".legal-cols > div"];
+  groups.forEach(sel => $$(sel).forEach((el, k) => { el.classList.add("rise"); el.style.transitionDelay = (k % 4) * 80 + "ms"; io.observe(el); }));
+  document.querySelectorAll('.view[data-view="preview"] .block:not(.page-top) .head').forEach(el => { el.classList.add("rise"); io.observe(el); });
+  const sweep = () => { const pending = document.querySelectorAll(".rise:not(.in)"); if (!pending.length) return removeEventListener("scroll", sweep); pending.forEach(el => { const r = el.getBoundingClientRect(); if (r.width && r.top < innerHeight * .92) { el.classList.add("in"); io.unobserve(el); } }); };
+  addEventListener("scroll", sweep, { passive: true }); addEventListener("hashchange", () => setTimeout(sweep, 60));
+})();
 $("drawChance").onclick = () => drawCard("chance");
 $("drawChest").onclick = () => drawCard("chest");
 
@@ -1433,7 +1427,7 @@ $("drawChest").onclick = () => drawCard("chest");
 window.Buddy = (function () {
   const el = $("buddy"), bubble = $("bubble"), jump = el.querySelector(".jump"), diceBox = $("dice"), pupils = el.querySelector(".pupils");
   const fine = matchMedia("(pointer: fine)").matches;
-  let hidden = false; try { hidden = localStorage.getItem("bricksHidden") === "1"; } catch {}
+  let hidden = matchMedia("(max-width: 700px)").matches; try { const p = localStorage.getItem("bricksHidden"); if (p !== null) hidden = p === "1"; } catch {}
   let x = innerWidth - 80, target = x, dir = -1, busy = false, pauseUntil = 0, lastAct = 0;
   let px = innerWidth / 2, py = innerHeight / 2;
   const half = () => el.offsetWidth / 2;
@@ -1554,7 +1548,7 @@ window.Buddy = (function () {
     target = x;
   });
   const passGo = () => act(async () => {
-    pose("cheer", 1800); say("Passed Go! Collect £200.", 2400);
+    pose("cheer", 1800); say("Passed GO! Collect £200.", 2400);
     await hop(0); notes(4); await sleep(300); await hop(0); await sleep(900);
   });
   const sold = () => act(async () => {
@@ -1567,7 +1561,7 @@ window.Buddy = (function () {
   const upgrade = () => act(async () => { say("Four houses? Time for a hotel!", 2000); await hop(0); pose("hotel", 2600); await sleep(2600); say("Back to a house. For now.", 1600); await sleep(800); });
   const wave = (text) => act(async () => { pose("wave", 1900); say(text, Math.max(2400, text.length * 65)); await sleep(1900); });
 
-  const LINES = ["Rent's due! Kidding. Merry Christmas.", "I'd buy two. Just saying.", "Ho ho ho! Christmas sale on.", "Psst. Orders close soon.", "Rent's doubled on this square."];
+  const LINES = ["Tie on? Good. No Detention for you.", "I'd buy two. One for the holidays.", "Psst. Reservations close soon.", "Rent on Big School is brutal.", "Free Period! Finally.", "Ho ho ho! Merry Christmas from RGS."];
   function idle() {
     if (busy || hidden || document.hidden || Date.now() - lastAct < 14000) return;
     const r = Math.random();
@@ -1737,3 +1731,5 @@ $("copyBtn").onclick = async () => {
 
 
 </script>
+</body>
+</html>
