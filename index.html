@@ -141,6 +141,7 @@ section.block + section.block { border-top: 1px solid var(--line); }
 .hero h1 .w { color: var(--ink); text-shadow: 0 10px 40px rgba(0,0,0,.35); }
 .lede { font-size: clamp(17px, 1.6vw, 20px); color: var(--ink-2); margin-top: 22px; max-width: 28em; }
 .price-tag { display: inline-flex; align-items: center; gap: 12px; margin-top: 26px; padding: 8px 16px 8px 8px; border-radius: 999px; background: rgba(255,255,255,.05); box-shadow: inset 0 0 0 1px var(--line); }
+.price-tag .was { font-size: 17px; font-weight: 700; color: var(--ink-2); text-decoration-thickness: 2px; text-decoration-color: #e0533f; margin-left: 6px; }
 .price-tag b { display: inline-grid; place-items: center; min-width: 58px; height: 36px; padding: 0 12px; border-radius: 999px; background: var(--red); color: #fff; font-size: 17px; font-weight: 800; box-shadow: 0 6px 18px rgba(226,64,79,.35); }
 .price-tag span { font-size: 14px; color: var(--ink-2); }
 
@@ -835,7 +836,7 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
   <p class="rv-cap" id="rvCap"></p>
   <button class="rv-close" type="button" id="rvClose" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
 </div>
-<div class="obar" id="obar" hidden><div class="obar-in"><span class="obar-t"><b id="obarPrice">£20</b><span id="obarCd">a set · reserve now, pay later</span></span><a class="btn btn-gold" href="#order">Reserve a set</a></div></div>
+<div class="obar" id="obar" hidden><div class="obar-in"><span class="obar-t"><b id="obarPrice">£20</b><span id="obarCd">early-bird · £25 at the fair</span></span><a class="btn btn-gold" href="#order">Reserve a set</a></div></div>
 
 <main>
   <!-- HOME -->
@@ -848,7 +849,7 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
             <span class="eyebrow stag"><span class="star">✦</span>Christmas <span class="yearStr">2026</span><span class="eb-x"> · Tycoon Enterprise</span></span>
             <h1 class="stag"><span class="w">RGS</span><br><span class="foil">Monopoly</span></h1>
             <p class="lede stag">Buy Big School. Build hotels on the High Street. Land in Detention for forgetting your tie. The classic property game, rebuilt square by square around RGS.</p>
-            <div class="price-tag stag"><b id="priceStr">£20</b><span id="priceNote">a set · reserve now, pay later</span></div>
+            <div class="price-tag stag"><s class="was" id="fairPriceStr">£25</s><b id="priceStr">£20</b><span id="priceNote">early-bird when you reserve · £25 at the fair</span></div>
             <div class="cd-wrap stag">
               <span class="eyebrow"><span class="star">✦</span><span id="cdLabel">Reservations close in</span></span>
               <div class="cd" id="countdown">
@@ -1030,10 +1031,10 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
       <div class="wrap faq-grid">
         <div>
           <div class="head"><span class="eyebrow stag"><span class="star">✦</span>FAQ</span><h2 class="h2 stag">Questions people ask us</h2><p class="sub stag">Paying, collecting, and what's inside the box.</p></div>
-          <div class="help stag"><h3>Rather buy in person?</h3><p>Come to our stall at the Christmas fair and pay cash, while sets last. Or email us at <a href="mailto:rgs.monopoly@gmail.com" style="color:inherit">rgs.monopoly@gmail.com</a>, or message us on Instagram at <a href="https://www.instagram.com/rgs.monopoly/" target="_blank" rel="noopener" style="color:inherit">@rgs.monopoly</a>.</p></div>
+          <div class="help stag"><h3>Rather buy in person?</h3><p>Come to our stall at the Christmas fair and pay £25 cash, while sets last. Reserving online is £5 cheaper. Or email us at <a href="mailto:rgs.monopoly@gmail.com" style="color:inherit">rgs.monopoly@gmail.com</a>, or message us on Instagram at <a href="https://www.instagram.com/rgs.monopoly/" target="_blank" rel="noopener" style="color:inherit">@rgs.monopoly</a>.</p></div>
         </div>
         <div class="faq stag">
-          <details open><summary>How much is it?<span class="pm"></span></summary><p><span class="faqPrice">£20</span> a set.</p></details>
+          <details open><summary>How much is it?<span class="pm"></span></summary><p><span class="faqPrice">£20</span> a set when you reserve online before <span class="closeStr">Mon 23 Nov, 6pm</span>. Any sets left over will be <span class="fairPrice">£25</span> at our stall on the day, so reserving saves you £5.</p></details>
           <details><summary>How do I pay?<span class="pm"></span></summary><p>Nothing to pay when you reserve. Once your set is made, we'll email you how to pay. You can also pay when you collect at our stall.</p></details>
           <details><summary>When and where do I collect?<span class="pm"></span></summary><p>From the Tycoon Enterprise stall at the Christmas fair on <span class="fairStr">Sat 28 Nov</span>. Give us the name on your order or your reference number.</p></details>
           <details><summary>When do reservations close?<span class="pm"></span></summary><p><span class="closeStr">Mon 23 Nov, 6pm</span>. After that, any spare sets are sold at the stall on the day.</p></details>
@@ -1066,7 +1067,7 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
           </div>
           <div>
             <h3>Price and paying</h3>
-            <p><span class="faqPrice">£20</span> a set. Reserving is free. Once your set is made, we'll email you how to pay. Your set is yours once you've paid, online or at the stall.</p>
+            <p><span class="faqPrice">£20</span> a set early-bird price for reservations, or <span class="fairPrice">£25</span> for any sets bought at the stall on the day. Reserving is free. Once your set is made, we'll email you how to pay. Your set is yours once you've paid, online or at the stall.</p>
             <h3>Collecting</h3>
             <p>Collect your set from our stall at the Christmas fair, <span class="fairStr">Sat 28 Nov</span>. Bring your name or order reference. If you can't make the fair, email us and we'll arrange collection at school.</p>
             <h3>Changes, cancellations and refunds</h3>
@@ -1094,6 +1095,8 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
 /* ---- Campaign settings ---- */
 const CONFIG = {
   unitPrice: 20,
+  fairPrice: 25, // price at the stall on the day
+
   bundlePrice: 60,                       // price for 3 sets (60 = no discount)
   closeDate: "2026-11-23T18:00:00Z",
   fairDate: "2026-11-28T10:00:00Z",
@@ -1118,6 +1121,7 @@ const bundleSaves = CONFIG.bundlePrice < CONFIG.unitPrice * 3;
 $$(".fairStr").forEach(e => e.textContent = fairStr);
 $$(".closeStr").forEach(e => e.textContent = closeStr);
 $$(".faqPrice").forEach(e => e.textContent = m(CONFIG.unitPrice));
+$$(".fairPrice").forEach(e => e.textContent = m(CONFIG.fairPrice)); $("fairPriceStr").textContent = m(CONFIG.fairPrice);
 $$(".yearStr").forEach(e => e.textContent = fair.getFullYear());
 $("priceStr").textContent = m(CONFIG.unitPrice); $("obarPrice").textContent = m(CONFIG.unitPrice);
 if (bundleSaves) $("priceNote").textContent = "a set · 3 for " + m(CONFIG.bundlePrice);
