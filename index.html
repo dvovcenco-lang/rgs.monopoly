@@ -8,7 +8,7 @@
 <meta property="og:image" content="https://rgsmonopoly.com/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <title>RGS Monopoly</title>
-<meta name="description" content="RGS Monopoly: the classic property game rebuilt around RGS Guildford. Made by Year 11 Tycoon Enterprise. Order online and collect at the Christmas fair.">
+<meta name="description" content="RGS Monopoly: the classic property game rebuilt around RGS Guildford. Made by Year 11 Tycoon Enterprise, with part of the profit going to charity. Order online and collect at the Christmas fair.">
 <meta name="theme-color" content="#032619">
 <meta property="og:type" content="website">
 <meta property="og:title" content="RGS Monopoly">
@@ -142,6 +142,8 @@ section.block + section.block { border-top: 1px solid var(--line); }
 .lede { font-size: clamp(17px, 1.6vw, 20px); color: var(--ink-2); margin-top: 22px; max-width: 28em; }
 .price-tag { display: inline-flex; align-items: center; gap: 12px; margin-top: 26px; padding: 8px 16px 8px 8px; border-radius: 999px; background: rgba(255,255,255,.05); box-shadow: inset 0 0 0 1px var(--line); }
 .price-tag .was { font-size: 17px; font-weight: 700; color: var(--ink-2); text-decoration-thickness: 2px; text-decoration-color: #e0533f; margin-left: 6px; }
+.charity { display: flex; align-items: center; gap: 10px; margin: 14px 0 0; font-size: 16px; color: var(--ink); }
+.charity b { font-weight: 800; }
 .price-tag b { display: inline-grid; place-items: center; min-width: 58px; height: 36px; padding: 0 12px; border-radius: 999px; background: var(--red); color: #fff; font-size: 17px; font-weight: 800; box-shadow: 0 6px 18px rgba(226,64,79,.35); }
 .price-tag span { font-size: 14px; color: var(--ink-2); }
 
@@ -850,6 +852,7 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
             <h1 class="stag"><span class="w">RGS</span><br><span class="foil">Monopoly</span></h1>
             <p class="lede stag"><b style="display:block;font-size:1.35em;color:var(--ink);margin-bottom:6px">Own the school.</b>Buy Big School. Build hotels on the High Street. Land in Detention for forgetting your tie. The classic property game, rebuilt square by square around RGS.</p>
             <div class="price-tag stag"><b id="priceStr">£25</b><span id="priceNote">a set · pay by card or Apple Pay</span></div>
+            <p class="charity stag"><svg width="16" height="16" viewBox="0 0 24 24" fill="#ff6b77" aria-hidden="true" style="flex:none"><path d="M12 21s-7.5-4.6-9.6-9.1C.9 8.6 3 5 6.6 5c2.1 0 3.6 1.2 4.4 2.5C11.8 6.2 13.3 5 15.4 5 19 5 21.1 8.6 19.6 11.9 17.5 16.4 12 21 12 21z"/></svg><span><b>Part of the profit from every set goes to charity.</b></span></p>
             <div class="cd-wrap stag">
               <span class="eyebrow"><span class="star">✦</span><span id="cdLabel">Orders close in</span></span>
               <div class="cd" id="countdown">
@@ -941,7 +944,7 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
       <div class="wrap">
         <div class="order-grid">
           <div>
-            <div class="head"><span class="eyebrow stag"><span class="star">✦</span>Order yours</span><h2 class="h2 stag">Order and pay online</h2><p class="sub stag">Fill in your details, then pay by card, Apple Pay or Google Pay. We'll put a set aside with your name on it, ready to collect from our stall at the fair.</p></div>
+            <div class="head"><span class="eyebrow stag"><span class="star">✦</span>Order yours</span><h2 class="h2 stag">Order and pay online</h2><p class="sub stag">Fill in your details, then pay by card, Apple Pay or Google Pay. We'll put a set aside with your name on it, ready to collect from our stall at the fair. <b style="color:var(--ink)">Part of the profit from every set goes to charity.</b></p></div>
             <div class="facts stag">
               <div class="fact"><span>One set</span><span id="fPrice">£25</span></div>
               <div class="fact"><span>Three sets</span><span id="fBundle">£75</span></div>
@@ -1037,7 +1040,8 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
           <div class="help stag"><h3>Rather buy in person?</h3><p>Come to our stall at the Christmas fair and pay cash, while sets last. Or email us at <a href="mailto:rgs.monopoly@gmail.com" style="color:inherit">rgs.monopoly@gmail.com</a>, or message us on Instagram at <a href="https://www.instagram.com/rgs.monopoly/" target="_blank" rel="noopener" style="color:inherit">@rgs.monopoly</a>.</p></div>
         </div>
         <div class="faq stag">
-          <details open><summary>How much is it?<span class="pm"></span></summary><p><span class="faqPrice">£25</span> a set, whether you reserve online or buy at our stall. Reserving makes sure you get one before they sell out.</p></details>
+          <details open><summary>How much is it?<span class="pm"></span></summary><p><span class="faqPrice">£25</span> a set, whether you order online or buy at our stall. Ordering online makes sure you get one before they sell out.</p></details>
+          <details><summary>Does any of it go to charity?<span class="pm"></span></summary><p><b>Yes. Part of the profit from every set goes to charity.</b> We'll share which charity, and how much we raised, on <a href="https://www.instagram.com/rgs.monopoly/" target="_blank" rel="noopener" style="color:inherit">@rgs.monopoly</a> after the fair.</p></details>
           <details><summary>How do I pay?<span class="pm"></span></summary><p>Online when you order, through SumUp: card, Apple Pay or Google Pay. Your order is confirmed once the payment arrives. You can also pay cash at our stall on the day, while sets last.</p></details>
           <details><summary>When and where do I collect?<span class="pm"></span></summary><p>From the Tycoon Enterprise stall at the Christmas fair on <span class="fairStr">Sat 28 Nov</span>. Give us the name on your order or your reference number.</p></details>
           <details><summary>When do reservations close?<span class="pm"></span></summary><p><span class="closeStr">Mon 23 Nov, 6pm</span>. After that, any spare sets are sold at the stall on the day.</p></details>
@@ -1075,6 +1079,8 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
             <p>Collect your set from our stall at the Christmas fair, <span class="fairStr">Sat 28 Nov</span>. Bring your name or order reference. If you can't make the fair, email us and we'll arrange collection at school.</p>
             <h3>Changes, cancellations and refunds</h3>
             <p>Email us with your reference before orders close, <span class="closeStr">Mon 23 Nov, 6pm</span>, to change or cancel your order for a full refund. If your set is faulty or has a piece missing, tell us and we'll replace the part or refund you.</p>
+            <h3>Charity</h3>
+            <p>Part of the profit from every set goes to charity. We'll announce the charity and the total raised after the fair.</p>
             <h3>Stock</h3>
             <p>We're making a limited number of sets, first come, first served. If we can't make yours for any reason, we'll refund you in full.</p>
             <h3>The game</h3>
