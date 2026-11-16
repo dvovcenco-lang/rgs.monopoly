@@ -981,6 +981,7 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
               <p class="lead" id="doneLead"></p>
               <a class="btn btn-gold" id="payBtn" href="#" target="_blank" rel="noopener" style="margin-top:20px"><span class="sheen"></span><span id="payTxt">Pay now</span></a>
               <p class="done-tip" id="payHow" style="margin-top:10px"></p>
+              <div id="mailFallbackBox" hidden style="margin-top:12px;padding:12px 14px;border-radius:12px;background:rgba(226,64,79,.14);box-shadow:inset 0 0 0 1px rgba(255,107,119,.35);font-size:14px;line-height:1.45">We couldn't send your order to us automatically. Please <a id="mailFallback" href="#" style="color:inherit;font-weight:800">tap here to email it to us</a> as well as paying, so we know whose set it is.</div>
               <div class="candy" aria-hidden="true" style="margin-top:24px"></div>
               <div class="done-rows">
                 <div><span>To pay</span><span id="dPay"></span></div>
@@ -1648,7 +1649,7 @@ function showDone(o, celebrate) {
   $("menuBadge").hidden = false; $("menuBadge").textContent = o.qty + (o.qty === 1 ? " set" : " sets");
   if (celebrate) { setTimeout(() => sparkle(document.querySelector(".done-tick")), 150); window.Buddy?.sold(); }
 }
-function showForm() { $("done").hidden = true; $("orderForm").hidden = false; }
+function showForm() { $("done").hidden = true; $("orderForm").hidden = false; $("mailFallbackBox").hidden = true; }
 if (CONFIG.fullyReserved) {
   $("reserveBtn").disabled = true; $("reserveTxt").textContent = "All sets reserved";
   $("payNote").innerHTML = "Any spare sets will be sold at our stall, " + fairStr + ".";
@@ -1676,7 +1677,13 @@ $("orderForm").addEventListener("submit", async (e) => {
     const j = await r.json().catch(() => ({}));
     if (!r.ok || String(j.success) !== "true") throw new Error(j.message || "send failed");
     current = o; showDone(o, true);
-  } catch { showErr("Your order didn't send. Check your connection and try again, or email us at " + CONFIG.orderEmail + "."); }
+  } catch {
+    // Never lose a sale: carry on to payment and let them email the order details to us instead.
+    current = o; showDone(o, true);
+    const body = "Reference: " + o.ref + "\nName: " + o.name + "\nPupil and form: " + o.pupil + "\nEmail: " + o.contact + "\nSets: " + o.qty + "\nTotal: " + m(o.total);
+    $("mailFallback").href = "mailto:" + CONFIG.orderEmail + "?subject=" + encodeURIComponent("Order " + o.ref) + "&body=" + encodeURIComponent(body);
+    $("mailFallbackBox").hidden = false;
+  }
   finally { $("reserveBtn").disabled = closed || CONFIG.fullyReserved; renderQty(); }
 });
 $("editBtn").onclick = () => { current = null; $("menuBadge").hidden = true; showForm(); };
