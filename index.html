@@ -1663,10 +1663,17 @@ $("orderForm").addEventListener("submit", async (e) => {
   if (!pupil) { showErr("Add the pupil's name and form so we can find your set."); $("fPupil").focus(); return; }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact)) { showErr("Add your email so we can tell you when your set is ready."); $("fContact").focus(); return; }
   const o = { name, pupil, contact, qty, total: net(qty), ref: "RGS-" + (1000 + Math.floor(Math.random() * 9000)) };
-  $("reserveBtn").disabled = true; $("reserveTxt").textContent = "Sending your order…";
+  // Show the pay screen straight away; the order email sends in the background.
+  current = o; showDone(o, true);
+  const fallback = () => {
+    const body = "Reference: " + o.ref + "\nName: " + o.name + "\nPupil and form: " + o.pupil + "\nEmail: " + o.contact + "\nSets: " + o.qty + "\nTotal: " + m(o.total);
+    $("mailFallback").href = "mailto:" + CONFIG.orderEmail + "?subject=" + encodeURIComponent("Order " + o.ref) + "&body=" + encodeURIComponent(body);
+    $("mailFallbackBox").hidden = false;
+  };
   try {
+    const ctl = new AbortController(), timer = setTimeout(() => ctl.abort(), 12000);
     const r = await fetch("https://formsubmit.co/ajax/" + CONFIG.orderEmail, {
-      method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" },
+      method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, signal: ctl.signal,
       body: JSON.stringify({
         _subject: "New order " + o.ref + ": " + o.qty + (o.qty === 1 ? " set" : " sets") + ", " + m(o.total) + " (check SumUp for payment)",
         _template: "table", _captcha: "false", _replyto: o.contact,
@@ -1674,16 +1681,10 @@ $("orderForm").addEventListener("submit", async (e) => {
         Status: "Sent to SumUp to pay. Only count it once a SumUp payment with this reference (or name) has arrived."
       })
     });
+    clearTimeout(timer);
     const j = await r.json().catch(() => ({}));
     if (!r.ok || String(j.success) !== "true") throw new Error(j.message || "send failed");
-    current = o; showDone(o, true);
-  } catch {
-    // Never lose a sale: carry on to payment and let them email the order details to us instead.
-    current = o; showDone(o, true);
-    const body = "Reference: " + o.ref + "\nName: " + o.name + "\nPupil and form: " + o.pupil + "\nEmail: " + o.contact + "\nSets: " + o.qty + "\nTotal: " + m(o.total);
-    $("mailFallback").href = "mailto:" + CONFIG.orderEmail + "?subject=" + encodeURIComponent("Order " + o.ref) + "&body=" + encodeURIComponent(body);
-    $("mailFallbackBox").hidden = false;
-  }
+  } catch (err) { if (current === o) fallback(); }
   finally { $("reserveBtn").disabled = closed || CONFIG.fullyReserved; renderQty(); }
 });
 $("editBtn").onclick = () => { current = null; $("menuBadge").hidden = true; showForm(); };
