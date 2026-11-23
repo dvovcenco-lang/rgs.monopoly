@@ -1303,8 +1303,8 @@ function squareInfo(i) {
   if (CORNERS[i]) return CORNERS[i];
   const g = GOF[i];
   if (REVEALED[i]) { const r = REVEALED[i]; return { kind: GROUP[r.set][1] + " set · Unwrapped", name: r.name, text: (i === 23 ? "Assemblies, exams, concerts. Now it's yours for £230." : "The shop everyone stops at on the way in. Yours for £100."), band: GROUP[r.set][0], revealed: r }; }
-  if (i === 4) return { kind: "Tax", name: "Income Tax", text: "Pay £200. Even the Bursar feels bad about this one." };
-  if (i === 38) return { kind: "Tax", name: "Super Tax", text: "Pay £100. Still sorry." };
+  if (i === 4) return { kind: "Red Flag", name: "Red Flag", text: "Caught out. Pay £200." };
+  if (i === 38) return { kind: "Red Flag", name: "Red Flag", text: "Another one. Pay £100." };
   if (i % 10 === 5) return { kind: "Station", name: "Wrapped station", text: "One of four ways in and out of Guildford. Own them all and the rent stacks up.", secret: true };
   if ([12, 28].includes(i)) return { kind: "Utility", name: "Wrapped utility", text: "Somewhere you go when you really need to. That's your clue.", secret: true };
   if ([2, 17, 33].includes(i)) return { kind: "Card square", name: "Lost Property", text: "Take a card. Birthdays, bake sales and lost blazers.", card: "chest" };
