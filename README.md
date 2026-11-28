@@ -10,7 +10,7 @@ When you've sold as many sets as you can make, change `fullyReserved: false` to 
 The very first order triggers an activation email to rgs.monopoly@gmail.com: click **Activate Form** once and every order after that arrives as an email.
 
 ## Dates
-The fair date and the reservation deadline live in the `CONFIG` block in `index.html` (`fairDate` and `closeDate`, in UK time). Currently the fair is Sat 28 Nov and reservations close Fri 27 Nov at 6pm.
+The fair date and the reservation deadline live in the `CONFIG` block in `index.html` (`fairDate` and `closeDate`, in UK time). Currently the fair is Sat 28 Nov and orders close Fri 11 Dec at 6pm (end of term) and sets are collected at school.
 
 ## Images
 `img/` holds the board, card and title deed images shown on the site. They're rendered from the print set, so ask Claude to re-render them when the designs or photos change.

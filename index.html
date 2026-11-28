@@ -8,11 +8,11 @@
 <meta property="og:image" content="https://rgsmonopoly.com/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <title>RGS Tycoon</title>
-<meta name="description" content="RGS Tycoon: the property trading game built around RGS Guildford. Made by Year 11 Tycoon Enterprise, with part of the profit going to charity. Flip the board over for the original Guildford board. Order online and collect at the Christmas fair.">
+<meta name="description" content="RGS Tycoon: the property trading game built around RGS Guildford. Made by Year 11 Tycoon Enterprise, with part of the profit going to charity. Flip the board over for the original Guildford board. Order online and collect at school.">
 <meta name="theme-color" content="#032619">
 <meta property="og:type" content="website">
 <meta property="og:title" content="RGS Tycoon">
-<meta property="og:description" content="Own the school. The property game, rebuilt around RGS Guildford. Reserve yours for the Christmas fair.">
+<meta property="og:description" content="Own the school. The property game, rebuilt around RGS Guildford. Order yours before the end of term.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23c8372d'/%3E%3Crect x='6' y='6' width='52' height='52' rx='8' fill='none' stroke='%23f3efe4' stroke-width='3'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-weight='700' font-size='24' text-anchor='middle' fill='%23f3efe4'%3ERGS%3C/text%3E%3C/svg%3E">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -822,10 +822,10 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
         <div class="menu-grid">
           <button class="mi" type="button" data-go="home"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span><span class="txt"><span class="t">Home</span><span class="d">The game and the countdown</span></span></button>
           <button class="mi" type="button" data-go="preview"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 8h18M3 16h18M8 3v18M16 3v18"/></svg></span><span class="txt"><span class="t">Sneak peek</span><span class="d">A few clues, no spoilers</span></span></button>
-          <button class="mi" type="button" data-go="order"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18v8H3z"/><path d="M4 12V8h16v4"/><path d="M12 8v12"/><path d="M8 8a2.5 2.5 0 0 1 4-2 2.5 2.5 0 0 1 4 2"/></svg></span><span class="txt"><span class="t">Order</span><span class="d">Reserve now, pay at the stall</span></span><span class="badge" id="menuBadge" hidden></span></button>
+          <button class="mi" type="button" data-go="order"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18v8H3z"/><path d="M4 12V8h16v4"/><path d="M12 8v12"/><path d="M8 8a2.5 2.5 0 0 1 4-2 2.5 2.5 0 0 1 4 2"/></svg></span><span class="txt"><span class="t">Order</span><span class="d">Pay online, collect at school</span></span><span class="badge" id="menuBadge" hidden></span></button>
           <button class="mi" type="button" data-go="faq"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14"/><path d="M12 17.5h.01"/></svg></span><span class="txt"><span class="t">FAQ</span><span class="d">Paying, collecting, cancelling</span></span></button>
         </div>
-        <div class="menu-foot"><span>Orders close in <b id="menuCd">—</b></span><span>Collect at the stall, <span class="fairStr">Sat 28 Nov</span></span><button class="bricks-toggle" type="button" id="bricksToggle">Hide Bricks</button></div>
+        <div class="menu-foot"><span>Orders close in <b id="menuCd">—</b></span><span>Collect at school</span><button class="bricks-toggle" type="button" id="bricksToggle">Hide Bricks</button></div>
       </nav>
     </div>
   </div>
@@ -862,13 +862,13 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
                 <div class="cd-t"><span class="v" id="cdM">00</span><span class="k">min</span></div>
                 <div class="cd-t sec"><span class="v" id="cdS">00</span><span class="k">sec</span></div>
               </div>
-              <p class="closed-note" id="closedNote" hidden>Reservations are closed. Find us at the stall at the Christmas fair for any spare sets.</p>
+              <p class="closed-note" id="closedNote" hidden>Orders are closed. Email us about any spare sets.</p>
             </div>
             <div class="ctas stag">
               <a class="btn btn-gold" href="#order"><span class="sheen"></span>Order a set</a>
               <a class="btn btn-ghost" href="#preview">Sneak peek</a>
             </div>
-            <p class="pickup stag"><span class="dot"></span>Collect from the Tycoon Enterprise stall at the Christmas fair, <span class="fairStr">Sat 28 Nov</span></p>
+            <p class="pickup stag"><span class="dot"></span>Collect at school from Tycoon Enterprise. We'll email you to arrange it.</p>
           </div>
 
           <div class="stage stag" id="stage" aria-hidden="true">
@@ -889,7 +889,7 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
 
         <div class="explore-row stag">
           <button class="xl" type="button" data-go="preview"><span class="sw" style="background:var(--gold)"></span><span><b>Sneak peek</b><span>Two squares unwrapped, the rest under wraps</span></span><span class="arr">→</span></button>
-          <button class="xl" type="button" data-go="order"><span class="sw" style="background:#2f8a55"></span><span><b>Order a set</b><span>Pay online, collect at the fair</span></span><span class="arr">→</span></button>
+          <button class="xl" type="button" data-go="order"><span class="sw" style="background:#2f8a55"></span><span><b>Order a set</b><span>Pay online, collect at school</span></span><span class="arr">→</span></button>
           <button class="xl" type="button" data-go="faq"><span class="sw" style="background:var(--red)"></span><span><b>Questions</b><span>Paying, collecting, the small print</span></span><span class="arr">→</span></button>
         </div>
       </div>
@@ -945,12 +945,12 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
       <div class="wrap">
         <div class="order-grid">
           <div>
-            <div class="head"><span class="eyebrow stag"><span class="star">✦</span>Order yours</span><h2 class="h2 stag">Order and pay online</h2><p class="sub stag">Fill in your details, then pay by card, Apple Pay or Google Pay. We'll put a set aside with your name on it, ready to collect from our stall at the fair. Every board is double-sided, so you can flip it over and play the original Guildford board too. <b style="color:var(--ink)">Part of the profit from every set goes to charity.</b></p></div>
+            <div class="head"><span class="eyebrow stag"><span class="star">✦</span>Order yours</span><h2 class="h2 stag">Order and pay online</h2><p class="sub stag">Fill in your details, then pay by card, Apple Pay or Google Pay. We'll put a set aside with your name on it, ready to collect at school. We'll email you to arrange a time. Every board is double-sided, so you can flip it over and play the original Guildford board too. <b style="color:var(--ink)">Part of the profit from every set goes to charity.</b></p></div>
             <div class="facts stag">
               <div class="fact"><span>One set</span><span id="fPrice">£25</span></div>
               <div class="fact"><span>Three sets</span><span id="fBundle">£75</span></div>
               <div class="fact"><span>Orders close</span><span class="closeStr">Fri 27 Nov, 6pm</span></div>
-              <div class="fact"><span>Collect</span><span>Our stall, <span class="fairStr">Sat 28 Nov</span></span></div>
+              <div class="fact"><span>Collect</span><span>At school, we'll email you</span></div>
             </div>
           </div>
 
@@ -976,7 +976,7 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
               <div class="total-row"><div><div class="total-lbl">To pay</div><div class="total" id="total">£25</div></div></div>
               <button class="btn btn-gold" type="submit" id="reserveBtn"><span class="sheen"></span><span id="reserveTxt">Order 1 set</span></button>
               <p class="err" id="err" hidden></p>
-              <p class="small-note" id="payNote">Next you pay securely with SumUp. Collect from our stall, <span class="fairStr">Sat 28 Nov</span></p>
+              <p class="small-note" id="payNote">Next you pay securely with SumUp. We'll email you to arrange collection at school.</p>
             </form>
 
             <div class="done" id="done" hidden>
@@ -990,7 +990,7 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
               <div class="done-rows">
                 <div><span>To pay</span><span id="dPay"></span></div>
                 <div><span>Reference</span><span class="refwrap"><span id="dRef"></span><button class="copyref" type="button" id="copyRef" aria-label="Copy reference"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span id="copyRefTxt">Copy</span></button></span></div>
-                <div><span>Collect</span><span>Our stall, <span class="fairStr">Sat 28 Nov</span></span></div>
+                <div><span>Collect</span><span>At school, we'll email you</span></div>
               </div>
               <p class="done-tip" id="doneTip"></p>
               <a class="btn btn-ghost" href="https://www.instagram.com/rgs.monopoly/" target="_blank" rel="noopener" style="margin-bottom:10px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:5px"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Follow @rgs.monopoly</a>
@@ -1000,7 +1000,7 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
         </div>
 
         <div class="team-box" id="team" hidden>
-          <div class="head"><span class="eyebrow"><span class="star">✦</span>Team only</span><h2 class="h2">Orders so far</h2><p class="sub">Only the company can see this. Mark sets paid and collected at the stall.</p></div>
+          <div class="head"><span class="eyebrow"><span class="star">✦</span>Team only</span><h2 class="h2">Orders so far</h2><p class="sub">Only the company can see this. Mark sets paid and collected.</p></div>
           <div class="stats">
             <div class="stat"><b id="sOrders">0</b><span>Orders</span></div>
             <div class="stat"><b id="sSets">0</b><span>Sets reserved</span></div>
@@ -1038,14 +1038,14 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
       <div class="wrap faq-grid">
         <div>
           <div class="head"><span class="eyebrow stag"><span class="star">✦</span>FAQ</span><h2 class="h2 stag">Questions people ask us</h2><p class="sub stag">Paying, collecting, and what's inside the box.</p></div>
-          <div class="help stag"><h3>Rather buy in person?</h3><p>Come to our stall at the Christmas fair and pay cash, while sets last. Or email us at <a href="mailto:rgs.monopoly@gmail.com" style="color:inherit">rgs.monopoly@gmail.com</a>, or message us on Instagram at <a href="https://www.instagram.com/rgs.monopoly/" target="_blank" rel="noopener" style="color:inherit">@rgs.monopoly</a>.</p></div>
+          <div class="help stag"><h3>Rather buy in person?</h3><p>Find a Tycoon Enterprise member at school and pay cash, while sets last. Or email us at <a href="mailto:rgs.monopoly@gmail.com" style="color:inherit">rgs.monopoly@gmail.com</a>, or message us on Instagram at <a href="https://www.instagram.com/rgs.monopoly/" target="_blank" rel="noopener" style="color:inherit">@rgs.monopoly</a>.</p></div>
         </div>
         <div class="faq stag">
-          <details open><summary>How much is it?<span class="pm"></span></summary><p><span class="faqPrice">£25</span> a set, whether you order online or buy at our stall. Ordering online makes sure you get one before they sell out.</p></details>
-          <details><summary>Does any of it go to charity?<span class="pm"></span></summary><p><b>Yes. Part of the profit from every set goes to charity.</b> We'll share which charity, and how much we raised, on <a href="https://www.instagram.com/rgs.monopoly/" target="_blank" rel="noopener" style="color:inherit">@rgs.monopoly</a> after the fair.</p></details>
-          <details><summary>How do I pay?<span class="pm"></span></summary><p>Online when you order, through SumUp: card, Apple Pay or Google Pay. Your order is confirmed once the payment arrives. You can also pay cash at our stall on the day, while sets last.</p></details>
-          <details><summary>When and where do I collect?<span class="pm"></span></summary><p>From the Tycoon Enterprise stall at the Christmas fair on <span class="fairStr">Sat 28 Nov</span>. Give us the name on your order or your reference number.</p></details>
-          <details><summary>When do reservations close?<span class="pm"></span></summary><p><span class="closeStr">Fri 27 Nov, 6pm</span>. After that, any spare sets are sold at the stall on the day.</p></details>
+          <details open><summary>How much is it?<span class="pm"></span></summary><p><span class="faqPrice">£25</span> a set, whether you order online or pay cash at school. Ordering online makes sure you get one before they sell out.</p></details>
+          <details><summary>Does any of it go to charity?<span class="pm"></span></summary><p><b>Yes. Part of the profit from every set goes to charity.</b> We'll share which charity, and how much we raised, on <a href="https://www.instagram.com/rgs.monopoly/" target="_blank" rel="noopener" style="color:inherit">@rgs.monopoly</a> at the end of term.</p></details>
+          <details><summary>How do I pay?<span class="pm"></span></summary><p>Online when you order, through SumUp: card, Apple Pay or Google Pay. Your order is confirmed once the payment arrives. You can also pay cash to a Tycoon Enterprise member at school, while sets last.</p></details>
+          <details><summary>When and where do I collect?<span class="pm"></span></summary><p>At school. We'll email you to arrange a time and place. Bring the name on your order or your reference number.</p></details>
+          <details><summary>When do reservations close?<span class="pm"></span></summary><p><span class="closeStr">Fri 27 Nov, 6pm</span>. After that, email us about any spare sets.</p></details>
           <details><summary>Does it play like the normal game?<span class="pm"></span></summary><p>Yes. Same rules, same money, same layout. Every property is a real place at RGS or nearby, with a photo on its title deed, and all 32 Report Card and Lost Property cards are rewritten about school life.</p></details><details><summary>What's on the other side of the board?<span class="pm"></span></summary><p><b>The original Guildford board.</b> We build each set on a donated board, so one side is RGS Tycoon and the other is the Guildford edition it came with. Play the school, then flip it over and play the town. Two games in one box.</p></details><details><summary>Can you tell me the squares?<span class="pm"></span></summary><p>Nope. That's half the fun. You'll find out when you open the box.</p></details>
           <details><summary>How many are there?<span class="pm"></span></summary><p>Not many. Reservations are first come, first served, so reserve early.</p></details>
           <details><summary>Can I change or cancel my reservation?<span class="pm"></span></summary><p>Yes. Email us at <a href="mailto:rgs.monopoly@gmail.com" style="color:inherit">rgs.monopoly@gmail.com</a> with your reference and we'll change or cancel it. If you've already paid, we'll refund you in full as long as it's before orders close.</p></details>
@@ -1069,7 +1069,7 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
             <h3>Where it goes</h3>
             <p>Your reservation is emailed to our company inbox through FormSubmit, a form service. If you pay by card, the payment is handled by our payment provider and we never see your card details.</p>
             <h3>How long we keep it</h3>
-            <p>We delete order details by 31 January 2027, once the fair is over and every order is settled. We never sell or share your details, and never add you to a mailing list.</p>
+            <p>We delete order details by 31 January 2027, once term is over and every order is settled. We never sell or share your details, and never add you to a mailing list.</p>
             <h3>Your rights</h3>
             <p>Email us any time to see, correct or delete the details we hold about you.</p>
           </div>
@@ -1077,11 +1077,11 @@ body.rv-on .buddy, body.rv-on .obar { visibility: hidden; }
             <h3>Price and paying</h3>
             <p><span class="faqPrice">£25</span> a set, paid online through SumUp when you order. Your order is confirmed once your payment reaches us. Unpaid orders are cancelled after 48 hours.</p>
             <h3>Collecting</h3>
-            <p>Collect your set from our stall at the Christmas fair, <span class="fairStr">Sat 28 Nov</span>. Bring your name or order reference. If you can't make the fair, email us and we'll arrange collection at school.</p>
+            <p>Collect your set at school. We'll email you to arrange a time and place. Bring your name or order reference.</p>
             <h3>Changes, cancellations and refunds</h3>
             <p>Email us with your reference before orders close, <span class="closeStr">Fri 27 Nov, 6pm</span>, to change or cancel your order for a full refund. If your set is faulty or has a piece missing, tell us and we'll replace the part or refund you.</p>
             <h3>Charity</h3>
-            <p>Part of the profit from every set goes to charity. We'll announce the charity and the total raised after the fair.</p>
+            <p>Part of the profit from every set goes to charity. We'll announce the charity and the total raised at the end of term.</p>
             <h3>Stock</h3>
             <p>We're making a limited number of sets, first come, first served. If we can't make yours for any reason, we'll refund you in full.</p>
             <h3>The game</h3>
@@ -1107,7 +1107,7 @@ const CONFIG = {
   unitPrice: 25,
 
   bundlePrice: 75,                       // price for 3 sets (75 = no discount)
-  closeDate: "2026-11-27T18:00:00Z",
+  closeDate: "2026-12-11T18:00:00Z",
   fairDate: "2026-11-28T10:00:00Z",
   maxSets: 20,
   orderEmail: "rgs.monopoly@gmail.com",
@@ -1659,7 +1659,7 @@ function showDone(o, celebrate) {
 function showForm() { $("done").hidden = true; $("orderForm").hidden = false; $("mailFallbackBox").hidden = true; }
 if (CONFIG.fullyReserved) {
   $("reserveBtn").disabled = true; $("reserveTxt").textContent = "All sets reserved";
-  $("payNote").innerHTML = "Any spare sets will be sold at our stall, " + fairStr + ".";
+  $("payNote").innerHTML = "Email us about any spare sets.";
 }
 
 $("orderForm").addEventListener("submit", async (e) => {
